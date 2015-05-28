@@ -11,8 +11,6 @@ body {
 }
 
 body {
-/*    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;*/
     font-family: "museo-slab",'open sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -54,7 +52,7 @@ h1 {
 }
 
 .navbar-collapse {
-    padding: 0 40px;
+    padding: 0;
 }
 
 h1,
@@ -102,74 +100,22 @@ aside {
 
 /* Bootstrap Override */
 
-.nav-filter {
-    padding: 14px 0;
-    text-align: center;
-    font-size: 110%;
-}
+/*
+.container {height:100px;width:200px;background:#eee;position:relative;}
+.container span {display:block;}
+.greyline {background:#ccc;height:10px;width:200px;position:absolute;bottom:0;}
+.redline {background:red;height:10px;width:0;margin:auto;}
+.container:hover .redline {
+    width:200px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition:all 0.3s ease-out;
+}*/
 
-.nav-filter > li > a, 
-.nav-filter > li.active > a {
+.nav > li > a:focus, .nav > li > a:hover,
+.nav > li > a:active {
     background-color: transparent;
-    color: rgba(255, 255, 255, .3);
-}
-
-.nav-filter > li.active > a, 
-.nav-filter > li.active > a:focus, 
-.nav-filter > li.active > a:hover {
-    background-color: transparent;
-}
-
-.nav > li > a:focus, .nav > li > a:hover {
-    background-color: transparent;
-}
-
-/* Effect 13: three circles */
-.nav-filter a {
-    position: relative;
-    display: inline-block;
-    margin: 15px 25px;
-    outline: medium none;
-    color: rgba(255, 255, 255, .3);
-    text-decoration: none;
-    text-transform: lowercase;
-    letter-spacing: 1px;
-    font-weight: 100;
-    text-shadow: 0px 0px .2px rgba(255, 255, 255, 0.3);
-}
-
-.dotted-underline a {
-    -webkit-transition: color 0.3s;
-    -moz-transition: color 0.3s;
-    transition: color 0.3s;
-}
-
-.dotted-underline a::before {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    color: transparent;
-    content: '•';
-    text-shadow: 0 0 transparent;
-    font-size: .5em;
-    -webkit-transition: text-shadow 0.3s, color 0.3s;
-    -moz-transition: text-shadow 0.3s, color 0.3s;
-    transition: text-shadow 0.3s, color 0.3s;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    transform: translateX(-50%);
-    pointer-events: none;
-}
-
-.dotted-underline a:hover::before,
-.dotted-underline a:focus::before {
-    color: #fff;
-    text-shadow: 10px 0 #fff, -10px 0 #fff;
-}
-
-.dotted-underline a:hover,
-.dotted-underline a:focus {
-    color: rgba(255, 255, 255, 1);
 }
 
 .navbar-default {
@@ -180,8 +126,7 @@ aside {
     margin: -10px 20px;
 }
 
-/*
-.nav-filter > li > a {
+.nav-pills > li > a {
     font-size: 110%;
     letter-spacing: 1px;
     font-weight: 100;
@@ -189,7 +134,7 @@ aside {
     text-decoration: none;
 }
 
-.nav-filter > li > a:before {
+.nav-pills > li > a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -204,16 +149,18 @@ aside {
     transition: all 0.3s ease-in-out 0s;
 }
 
-.nav-filter > li > a:hover:before {
+.nav-pills > li > a:hover:before,
+.nav-pills > li > a:focus,
+.nav-pills > li > a:active {
     visibility: visible;
-    -webkit-transform: scaleX(.6);
-    transform: scaleX(.6);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
 
-.nav-filter, 
-.nav-filter > li.active > a, 
-.nav-filter > li.active > a:focus, 
-.nav-filter > li.active > a:hover {
+.nav-pills, 
+.nav-pills > li.active > a, 
+.nav-pills > li.active > a:focus, 
+.nav-pills > li.active > a:hover {
     background-color: transparent;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
@@ -221,16 +168,15 @@ aside {
     padding: 20px 0 10px 0;
 }
 
-.nav-filter > li.active > a:focus {
+.nav-pills > li.active > a:focus {
     color: rgba(255,255,255,1);
 }
 
-.nav-filter > li > a:hover {
+.nav-pills > li > a:hover {
     background-color: transparent;
     border-radius: 0 !important;
     color: rgba(255,255,255,1);
 }
-*/
 
 .navbar-default {
     border-color: rgba(34,34,34,.05);
@@ -259,7 +205,7 @@ aside {
     text-transform: lowercase;
     font-size: 18px;
     font-weight: 100;
-    color: rgba(255,255,255,.7);
+    color: #222;
     letter-spacing: 1px;
 }
 
@@ -355,19 +301,19 @@ header {
   -moz-background-size: 3px 3px;
   background-size: 3px 3px;
   overflow: hidden;
-  min-height:700px;
-}
+  min-height: 700px;
+  }
 
 header .header-content {
     position: relative;
     width: 100%;
-    padding: 50% 0px;
+    padding: 40% 0px;
     text-align: center;
 }
 
 header .header-content .header-content-inner h1 {
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0;
 /*    text-transform: uppercase;
      font-weight: 100;
 */
@@ -376,15 +322,14 @@ header .header-content .header-content-inner h1 {
 }
 
 header .header-content .header-content-inner hr {
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 header .header-content .header-content-inner p {
     margin-bottom: 50px;
     font-weight: 100;
-    font-size: 150%;
-    line-height: 130%;
-    color: rgba(255,255,255,.9);
+    font-size: 25px;
+    color: rgba(255,255,255,.7);
     -webkit-animation-delay: 1.3s;
     -moz-animation-delay: 1.3s;
 }
@@ -413,7 +358,6 @@ header .header-content .header-content-inner p {
         margin-right: auto;
         margin-left: auto;
         max-width: 80%;
-        font-size: 180%;
     }
 }
 
@@ -469,7 +413,7 @@ header .header-content .header-content-inner p {
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-    padding: 0 40px;
+    padding: 0 30px;
     font-weight: 100;
     font-family: "museo-slab", 'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
@@ -630,16 +574,6 @@ fieldset[disabled] .btn-primary.active {
     padding: 15px 30px;
 }
 
-.circular-icons > li > a {
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  padding: 17px;
-  border-radius: 130px;
-  background-color: black;
-  margin: 0 20px;
-}
-
 ::-moz-selection {
     text-shadow: none;
     color: #fff;
@@ -660,10 +594,6 @@ img::selection {
 img::-moz-selection {
     color: #fff;
     background: 0 0;
-}
-
-footer {
-    padding: 20px 0;
 }
 
 body {
